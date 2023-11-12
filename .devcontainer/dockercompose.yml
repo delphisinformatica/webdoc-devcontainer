@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  web-doc-app:
+    image: "web-doc-app:latest"
+    container_name: web-doc-app
+    build:
+      context: /root/web-doc/git/webdoc
+      dockerfile: /root/web-doc/git/.devcontainer/Dockerfile
+    restart: unless-stopped
+    environment:
+        NODE_ENV: "development"
+        NPM_CONFIG_LOGLEVEL: "silly"
+        PGHOST: "10.20.30.48"
+        PGPORT: "5432"
+        PGUSER: "postgres"
+        PGPASSWORD: "postgres"
+        PGDATABASE: "webdoc"
+#    volumes:
+#      - /root/web-doc/git:/app
+    ports:
+      - "3000:3000"
+#    command: "sleep infinity"

@@ -2,7 +2,8 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node-postgres
 {
     "name": "web-doc",
-    "dockerComposeFile": "/root/web-doc/docker/dockercompose.yml",
+    "dockerComposeFile": "dockercompose.yml",
+    "dockerFile": "Dockerfile",
     "service": "web-doc-app",
     "workspaceFolder": "/app",
 
